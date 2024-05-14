@@ -29,12 +29,22 @@ const knownLogos = new Map([
     ['uroborus', require('@/assets/logos/uroborus.png')],
     ['yellow', require('@/assets/logos/yellow.png')],
     ['zjunlict', require('@/assets/logos/zjunlict.png')],
+    ['浙江大学', require('@/assets/logos/浙江大学.png')],
+    ['浙江广厦建设职业技术大学', require('@/assets/logos/浙江广厦建设职业技术大学.png')],
+    ['宁波大学', require('@/assets/logos/宁波大学.png')],
+    ['宁波工程学院', require('@/assets/logos/宁波工程学院.png')],
+    ['浙江工商大学', require('@/assets/logos/浙江工商大学.png')],
+    ['浙江水利水电学院', require('@/assets/logos/浙江水利水电学院.png')],
+    ['浙大城市学院', require('@/assets/logos/浙大城市学院.png')],
+    ['温州职业技术学院', require('@/assets/logos/温州职业技术学院.png')],
+    ['浙大宁波理工学院', require('@/assets/logos/浙大宁波理工学院.png')],
+    ['湖州师范学院', require('@/assets/logos/湖州师范学院.png')],
 ]);
 
 import defaultLogo from '@/assets/logos/no-logo.png';
 
 const teamLogoUrl = function (teamName) {
-    const logoBaseName = teamName.toLowerCase().replace(' ', '-');
+    const logoBaseName = teamName.toLowerCase().split(' - ')[0];
     const logoPath = knownLogos.get(logoBaseName);
     if (logoPath !== undefined) {
         return logoPath;
